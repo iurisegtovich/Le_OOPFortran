@@ -1,0 +1,2 @@
+próximo tópico é o abstract type / procedure(abstract interface), deferred
+
