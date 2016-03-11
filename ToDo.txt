@@ -1,2 +1,2 @@
-próximo tópico é o abstract type / procedure(abstract interface), deferred
+próximo tópico é f6: o abstract type / procedure(abstract interface), deferred 
 

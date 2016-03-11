@@ -1,0 +1,134 @@
+!#type, abstract; procedure(abstract interface), deferred
+
+!#0 !podemos ler esse código seguindo os marcadors !#1 ..até !#n, pulando ao ver um link !{1} ...!{n}
+!olhemos o marcador em PROGRAM primeiramente {1}
+
+!#2 !voltando aqui, olhemos a seção de definições de types e declarações de variaveisa e objetos do m1 antes de continuar
+module m1 !nesse tópico vamos definir TYPE BOUND PROCEDURES,
+!a interface deles é realzada automaticamente
+!mas para isso precisamos organizart os tipos e as rotinas em um mesmo modulo
+
+!isso é um type novo que empacota um inteiro e um real
+!e que tem um type bound procedure cujo binding name é disp2
+  type, abstract :: t2
+    integer :: n
+    real :: r
+  contains
+    !aqui está o TYPE BOUND PROCEDURE, ele fica referido na seção contaisnde um type e precisa ser implementado na seção contains desse module
+    !estudemos a estrutura desse antes de continuar
+    procedure(AbsInt1), deferred :: disp2 !{3}
+    !#4 isso conclui esse type
+  end type
+  
+!isso é um type novo que extende a funcionalidade do t2
+  type, extends(t2) :: t3
+    character( len = 1 ) :: c
+  contains
+    !aqui fazemos que o procedimento disp2 é OVERRIDEN pelo procedimento disp3
+    !quer dizer que ao chamar o disp2 de um t3, vai rodar a rotina disp3
+    !estudemos a estrutura desse antes de continuar
+    procedure :: disp2 => disp3 !{5}
+    !#6 isso conclui esse type
+  end type
+!ele empacota um inteiro e um real, além de um character
+  
+!isso são duas variáveis do tipo t2, e que são ponteiros
+  type(t2), pointer :: t2_op1
+  
+!isso é uma variável da classe t2, que precisa ser um ponteiro,
+!pois a palavra chave CLASS significa que não está definido se o objeto pertence ao tipo t2 ou se pertence a uma extensão qualquer desse tipo
+!e logo a memória necessária não pode ser determinada neste ponto
+  class(t2), pointer :: c2_o1, c2_o2
+  
+  type(t3), pointer :: t3_op1
+  
+  !terminamos o cabeçalho, vamos à execução {7}
+  
+contains
+
+!#8 aqui começa a execução
+  subroutine s1()
+    !a alocação de memória e atribuição de valor podem ser feitas simultaneamente com a palavra chave SOURCE
+  allocate(t2_op1, source = t2(n=7,r=8.) )
+
+!é possível imprimir o valor de suas variáveis usando o typebound procedure implementado
+!para chamar um TYPEBOUND procedure, usamos a sintaxe " OBJETO % PROCEDIMENTO ", o que passa o objeto como primeiro argumento esperado pela rotina
+!e traz a interpretação de que pedimos o procedimento tal pertencente ao objeto tal com suas propriedades
+  call t2_op1%disp2 !executa-se o que foi visto no item 3
+  
+!para uma variável de class, e portanto sendo pointer, é essencial usar a forma allocate/source
+  allocate(c2_o1, source = t2(n=9,r=10.) )
+!o tipo especifico do objeto e definido pelo objeto a disposição da SOURCE, no caso foi um objeto do tipo t2
+
+!é possível imprimir o valor de suas variáveis usando o typebound procedure implementado para a classe t2
+  call c2_o1%disp2
+!como o tipo é o t2, vai rodar a implementação disp2
+!então executa-se o que foi visto no item 3
+
+!para uma variável de class, é possível usar a forma allocate/source com um objeto de uma extensão da classe dessa variável
+  allocate(c2_o2, source = t3(n=11,r=12.,c='a') )
+!nesse caso foi um objeto do tipo t3
+
+!é possível imprimir o valor de suas variáveis usando o typebound procedure implementado para a classe t2
+  call c2_o2%disp2
+!como o tipo é o t3, vai rodar a implementação disp3
+!então executa-se o que foi visto no item 5
+
+!como o programa reconhece o objeto como da classe t2, só é possível acessar diretamente as variáveis disponíveis nessa classe
+!a não ser usando procedimentos atrelados ao tipo, a se ver no próximo tópico
+  
+!esse é um objeto reconhecido como do tipo t3
+  allocate(t3_op1, source = t3(n=13,r=14.,c='b') )
+
+!é possível imprimir o valor de suas variáveis usando o typebound procedure implementado para a classe t2
+  call t3_op1%disp2
+
+!mesmo esse objeto sendo reconhecido como do tipo 3, o BINDING NAME para o disp3 foi dado como disp2
+!no próximo tópico podemos ver o que é um tipo ABSTRACT com procedimento DEFERRED "disp"
+
+  !rotina concluída, voltamos a quem chamou, no caso foi o program
+  end subroutine
+  
+  !#3 essa é a rotina TYPEBOUND para o tipo t2, TYPE BOUND quer dizer que ela espera receber como 1o argumento, um objeto da classe t2
+  subroutine disp2(z)
+    !o argumento ser da CLASS tal, e não do TYPE tal, significa ser um argumento polimórfico isso é, do tipo t2 ou qualquer tipo que seja extensão
+    class(t2) :: z
+    !o que a gente escolheu fazer aqui foi imprimir os valores das variáveis
+    print*, char(11)//'disp2'//char(11)//'t2_op1%n, t2_op1%r = '
+    print*, z%n, z%r
+    !rotina concluída, retornemos o estudo ao item {4}
+ end subroutine
+
+  !#5 essa é a rotina TYPEBOUND para o tipo t3, ela espera receber um argumento da classe t3, isso é, do tipo t3 ou qualquer extensão
+  !ela não vai aceitar argumento do tipo t2
+  subroutine disp3(z)
+    class(t3) :: z
+    print*, 'disp3'
+    !é possível acessar implementações pertencentes aos tipos superiores do tipo em análise
+    !aqui nós acessamos a implementação de disp2 do tipo t2, que é a própria rotina disp2
+    call z%t2%disp2 !executa-se o que foi visto no item 3
+    !e depois retornamos para fazer mais alguma coisa, no caso imprimir a propriedade que esse tipo tem em extensão das do tipo superior
+    print*, char(11)//'z%c = '
+    print*, z%c
+    
+    !e assim concluímos essa rotina {6}
+ end subroutine
+
+end module
+
+!#1 !o programa começa necessariamente aqui
+program main
+!necessitamos acesso a rotina s1, onde estão todos os exemplos deste tópico
+!olhemos também a seção de definições de types e declarações de variaveisa e objetos do m1 antes de continuar 
+use m1, only: s1 !{2}
+
+!#7 !vamos à implementação
+!a ordem de execução desse programa será PROGRAM -> s1 -> disp2 -> s1 -> disp3 -> disp2 -> disp3 -> s1 -> program
+!vamos à rotina s1
+call s1() !{8}
+
+!#n
+!tópico concluído
+end program
+
+

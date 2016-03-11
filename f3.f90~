@@ -1,3 +1,5 @@
+!type, extends; class, pointer; select type
+
 program main
 
 !isso é um type novo que empacota um inteiro e um real

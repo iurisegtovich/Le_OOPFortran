@@ -1,3 +1,5 @@
+!type, pointer, allocate/source
+
 program main
 
 !isso é uma variável do type integer

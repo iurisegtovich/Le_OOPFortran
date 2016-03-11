@@ -1,3 +1,5 @@
+!type, extends; class, pointer; select type
+
 program main
 
 !isso é um type novo que empacota um inteiro e um real
@@ -54,7 +56,7 @@ program main
 !nesse caso foi um objeto do tipo t3
   
 !como o programa reconhece o objeto como da classe t2, só é possível acessar diretamente as variáveis disponíveis nessa classe
-!a não ser usando procedimentos atrelados ao tipo, a se ver no próximo tópico
+!a não ser usando procedimentos atrelados ao tipo TYPE BOUND PROCEDURES, a se ver no tópico 5
 !ou, contigentemente, usando um bloco de controle especial:
   select type(c2_o2)
   class is(t2)
