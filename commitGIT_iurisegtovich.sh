@@ -48,3 +48,8 @@ if [ $quit = false ]; then
 fi
 
 echo "Done"
+
+#git remote add origin https://github.com/iurisegtovich/Le_OOPFortran
+#git pull origin master
+#git add -A
+#git push origin master
