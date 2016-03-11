@@ -49,7 +49,14 @@ fi
 
 echo "Done"
 
+
+#to sync your workspace before working
+#to retrieve files from github
 #git remote add origin https://github.com/iurisegtovich/Le_OOPFortran
 #git pull origin master
+
+#to modify this script to update github consider the following
+#to send files to github
 #git add -A
+#git commit -m "msg"
 #git push origin master

@@ -1,0 +1,14 @@
+tutorial sobre type; class; type bound procedure; binding name; allocate, source; abstract; deferred
+agora com pointer to procedures e reorganização de parte do material antigo
+botei o pointer to procedure para usar outro
+editei uns comment no sh commit
+tutorial sobre type; class; type bound procedure; binding name; allocate, source; abstract; deferred
+agora com pointer to procedures e reorganização de parte do material antigo
+botei o pointer to procedure para usar outro
+tutorial sobre type; class; type bound procedure; binding name; allocate, source; abstract; deferred
+agora com pointer to procedures e reorganização de parte do material antigo
+tutorial sobre type; class; type bound procedure; binding name; allocate, source; abstract; deferred
+agora com pointer to procedures e reorganização de parte do material antigo
+tutorial sobre type; class; type bound procedure; binding name; allocate, source; abstract; deferred
+agora com pointer to procedures e reorganização de parte do material antigo
+tutorial sobre type, class, type bound procedure, binding name, allocate/source, abstract, deferred
