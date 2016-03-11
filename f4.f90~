@@ -175,22 +175,27 @@ contains
  
   subroutine sp21a(z)
     class(t2) :: z
-    print*, char(11)//'sp21a'
+    print*, char(11)//'sp21a, r, n'
+    print*, z%r, z%n
   end subroutine
  
   subroutine sp21b(z)
     class(t2) :: z
-    print*, char(11)//'sp21b'
+    print*, char(11)//'sp21b, r, n'
+    print*, z%r, z%n
   end subroutine
  
   subroutine sp22(z)
     class(t2) :: z
-    print*, char(11)//'sp22'
+    print*, char(11)//'sp22, r, n'
+    print*, z%r, z%n
   end subroutine
   
   subroutine sp31(z)
     class(t3) :: z
-    print*, char(11)//'sp31'
+    call z%sp21
+    print*, char(11)//'sp31, c'
+    print*, z%c
   end subroutine
 
 end module
