@@ -43,7 +43,7 @@ if [ $quit = false ]; then
 
   git commit -m "$CommitMessageString"
 
-  7z a ../oop_design_extension_vs_injection_.$(date +%Y.%m.%d.%Hh.%Mm)_.7z ../oop_design_extension_vs_injection
+  7z a ../Le_OOPFortran_.$(date +%Y.%m.%d.%Hh.%Mm)_.7z ../Le_OOPFortran
 
 fi
 
