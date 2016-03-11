@@ -2,3 +2,4 @@ tutorial sobre type; class; type bound procedure; binding name; allocate, source
 agora com pointer to procedures e reorganização de parte do material antigo
 botei o pointer to procedure para usar outro
 editei uns comment no sh commit
+ajeitei nas pastas
