@@ -20,32 +20,37 @@ program main
   i=1
 
 !isso imprime o valor da variável i
-  print*, char(11)//'i = '
+  print*, 
+  print*, 'i = '
   print*, i
   
   
 !para acessar uma variável desse tipo, usamos o TOKEN %, que dá a idéia de posse
 !a seguir queremos imprimir o valor da vriável n pertencente ao objeto t_o1, e o da variável r pertencente ao objeto t_o1
-  print*, char(11)//'t_o1%n, t_o1%r = '
+  print*, 
+  print*, 't_o1%n, t_o1%r = '
   print*, t_o1%n, t_o1%r
 !ao pedir a impressão dos valores das variaveis desse objeto, recebemos os valores padrão
   
 !isso são atribuições de valor às variáveis n e r do objeto t_o1
   t_o1%n=1
   t_o1%r=2.
-  print*, char(11)//'t_o1%n, t_o1%r = '
+  print*, 
+  print*, 't_o1%n, t_o1%r = '
   print*, t_o1%n, t_o1%r
   
 !também é possível atribuir os valores as variáveis usando o construtor automático do type
   t_o1=t(n=3,r=4.)
 !o construtor sobrescreve os valores de com inicialização DEFAULT
-  print*, char(11)//'t_o1%n, t_o1%r = '
+  print*, 
+  print*, 't_o1%n, t_o1%r = '
   print*, t_o1%n, t_o1%r
   
 !também é possível atribuir os valores as variáveis usando o construtor automático do type apenas para algumas das variáveis, caso outras já possuam valores de inicialização default
   t_o2=t(r=4.)
 !o construtor sobrescreve os valores de com inicialização DEFAULT
-  print*, char(11)//'t_o2%n, t_o2%r = '
+  print*, 
+  print*, 't_o2%n, t_o2%r = '
   print*, t_o2%n, t_o2%r
   
 end program

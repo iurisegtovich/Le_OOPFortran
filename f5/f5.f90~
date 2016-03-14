@@ -95,8 +95,7 @@ contains
     class(t2) :: z
     !o que a gente escolheu fazer aqui foi imprimir os valores das variáveis
     print*, 
-  print*, 'disp2'
-  print*, 't2_op1%n, t2_op1%r = '
+  print*, 'disp2'//char(11)//'t2_op1%n, t2_op1%r = '
     print*, z%n, z%r
     !rotina concluída, retornemos o estudo ao item {4}
  end subroutine

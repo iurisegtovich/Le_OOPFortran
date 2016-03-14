@@ -25,9 +25,9 @@ program main
   
   
 !para acessar uma variável desse tipo, usamos o TOKEN %, que dá a idéia de posse
-!a seguir queremos imprimir o valor da variável n pertencente ao objeto t_o1
-  print*, char(11)//'t_o1%n = '
-  print*, t_o1%n
+!a seguir queremos imprimir o valor da vriável n pertencente ao objeto t_o1, e o da variável r pertencente ao objeto t_o1
+  print*, char(11)//'t_o1%n, t_o1%r = '
+  print*, t_o1%n, t_o1%r
 !ao pedir a impressão dos valores das variaveis desse objeto, recebemos os valores padrão
   
 !isso são atribuições de valor às variáveis n e r do objeto t_o1

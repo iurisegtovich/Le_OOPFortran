@@ -29,34 +29,29 @@ program main
   
 !é possível atribuir os valores as variáveis usando o construtor automático do type
   t2_o1=t2(n=3,r=4.)
-  print*, 
-  print*, 't2_o1%n, t2_o1%r = '
+  print*, char(11)//'t2_o1%n, t2_o1%r = '
   print*, t2_o1%n, t2_o1%r
   
 !para o objeto que é ponteiro, primeiro, memória precisa ser alocada
   allocate(t2_op1)
   t2_op1=t2(n=5,r=6.)
-  print*, 
-  print*, 't2_op1%n, t2_op1%r = '
+  print*, char(11)//'t2_op1%n, t2_op1%r = '
   print*, t2_op1%n, t2_op1%r
 
 !a alocação de memória e atribuição de valor podem ser feitas simultaneamente com a palavra chave SOURCE
   allocate(t2_op2, source = t2(n=7,r=8.) )
-  print*, 
-  print*, 't2_op2%n, t2_op2%r = '
+  print*, char(11)//'t2_op2%n, t2_op2%r = '
   print*, t2_op2%n, t2_op2%r
   
 !para uma variável de class, e portanto sendo pointer, é essencial usar a forma allocate/source
   allocate(c2_o1, source = t2(n=9,r=10.) )
-  print*, 
-  print*, 'c2_o1%n, c2_o1%r = '
+  print*, char(11)//'c2_o1%n, c2_o1%r = '
   print*, c2_o1%n, c2_o1%r
 !o tipo especifico do objeto e definido pelo objeto a disposição da SOURCE, no caso foi um objeto do tipo t2
 
 !para uma variável de class, é possível usar a forma allocate/source com um objeto de uma extensão da classe dessa variável
   allocate(c2_o2, source = t3(n=11,r=12.,c='a') )
-  print*, 
-  print*, 'c2_o2%n, c2_o2%r = '
+  print*, char(11)//'c2_o2%n, c2_o2%r = '
   print*, c2_o2%n, c2_o2%r
 !nesse caso foi um objeto do tipo t3
   
@@ -65,19 +60,16 @@ program main
 !ou, contigentemente, usando um bloco de controle especial:
   select type(c2_o2)
   class is(t2)
-  print*, 
-  print*, 'c2_o2%n, c2_o2%r = '
+  print*, char(11)//'c2_o2%n, c2_o2%r = '
   print*, c2_o2%n, c2_o2%r
   class is (t3)
-  print*, 
-  print*, 'c2_o2%n, c2_o2%r, c2_o2%c = '
+  print*, char(11)//'c2_o2%n, c2_o2%r, c2_o2%c = '
   print*, c2_o2%n, c2_o2%r, c2_o2%c
   end select
   
 !esse é um objeto reconhecido como do tipo t3
   allocate(t3_op1, source = t3(n=13,r=14.,c='b') )
-  print*, 
-  print*, 't3_op1%n, t3_op1%r, t3_op1%c = '
+  print*, char(11)//'t3_op1%n, t3_op1%r, t3_op1%c = '
   print*, t3_op1%n, t3_op1%r, t3_op1%c
 !nesse caso é possível acessar diretamente todas as variáveis do tipo
   

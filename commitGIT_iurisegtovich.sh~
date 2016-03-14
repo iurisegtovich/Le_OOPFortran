@@ -25,8 +25,7 @@ if [ $quit = false ]; then
   echo $OLD_CHANGELOG_FNAME
   echo $NEW_CHANGELOG_FNAME
 
-  echo $(date +%Y.%m.%d.%Hh.%Mm) > $NEW_CHANGELOG_FNAME
-  cat CommitMessage.txt >> $NEW_CHANGELOG_FNAME
+  cat CommitMessage.txt > $NEW_CHANGELOG_FNAME
 
   cat $OLD_CHANGELOG_FNAME >> $NEW_CHANGELOG_FNAME
 

@@ -166,36 +166,42 @@ contains
   !#3 essa é a rotina TYPEBOUND para o tipo t2, TYPE BOUND quer dizer que ela espera receber como 1o argumento, um objeto da classe t2
   subroutine sp11a()
     !essa rotina não recebe argumento nenhum, não há muito o que elea possa fazer nesse exemplo
-    print*, char(11)//'sp11a'
+    print*, 
+  print*, 'sp11a'
  end subroutine
  
    subroutine sp11b()
     !essa rotina não recebe argumento nenhum, não há muito o que elea possa fazer nesse exemplo
-    print*, char(11)//'sp11b'
+    print*, 
+  print*, 'sp11b'
  end subroutine
  
   subroutine sp21a(z)
     class(t2) :: z
-    print*, char(11)//'sp21a, r, n'
+    print*, 
+  print*, 'sp21a, r, n'
     print*, z%r, z%n
   end subroutine
  
   subroutine sp21b(z)
     class(t2) :: z
-    print*, char(11)//'sp21b, r, n'
+    print*, 
+  print*, 'sp21b, r, n'
     print*, z%r, z%n
   end subroutine
  
   subroutine sp22(z)
     class(t2) :: z
-    print*, char(11)//'sp22, r, n'
+    print*, 
+  print*, 'sp22, r, n'
     print*, z%r, z%n
   end subroutine
   
   subroutine sp31(z)
     class(t3) :: z
     call z%p21
-    print*, char(11)//'sp31, c'
+    print*, 
+  print*, 'sp31, c'
     print*, z%c
   end subroutine
 

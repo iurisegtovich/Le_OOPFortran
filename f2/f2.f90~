@@ -29,27 +29,23 @@ program main
   ip=2
 
 !isso imprime o valor da variável i e ip
-  print*, 
-  print*, 'i, ip = '
+  print*, char(11)//'i, ip = '
   print*, i, ip
   
 !é possível atribuir os valores as variáveis usando o construtor automático do type
   t2_o1=t2(n=3,r=4.)
-  print*, 
-  print*, 't2_o1%n, t2_o1%r = '
+  print*, char(11)//'t2_o1%n, t2_o1%r = '
   print*, t2_o1%n, t2_o1%r
   
 !para o objeto que é ponteiro, primeiro, memória precisa ser alocada
   allocate(t2_op1)
   t2_op1=t2(n=5,r=6.)
-  print*, 
-  print*, 't2_op1%n, t2_op1%r = '
+  print*, char(11)//'t2_op1%n, t2_op1%r = '
   print*, t2_op1%n, t2_op1%r
 
 !a alocação de memória e atribuição de valor podem ser feitas simultaneamente com a palavra chave SOURCE
   allocate(t2_op2, source = t2(n=7,r=8.) )
-  print*, 
-  print*, 't2_op2%n, t2_op2%r = '
+  print*, char(11)//'t2_op2%n, t2_op2%r = '
   print*, t2_op2%n, t2_op2%r
   
 end program

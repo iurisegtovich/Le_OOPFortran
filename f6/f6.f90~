@@ -90,7 +90,8 @@ contains
     !o argumento ser da CLASS tal, e não do TYPE tal, significa ser um argumento polimórfico isso é, do tipo t ou qualquer tipo que seja extensão
     class(t2) :: z
     !o que a gente escolheu fazer aqui foi imprimir os valores das variáveis
-    print*, char(11)//'disp2'//char(11)//'c2%n, c2%c = '
+    print*, 
+  print*, 'disp2'//char(11)//'c2%n, c2%c = '
     print*, z%n, z%c
     !rotina concluída, retornemos o estudo ao item {4}
  end subroutine
@@ -100,7 +101,8 @@ contains
   subroutine disp3(z)
     class(t3) :: z
     !e depois retornamos para fazer mais alguma coisa, no caso imprimir a propriedade que esse tipo tem em extensão das do tipo superior
-    print*, char(11)//'disp3'//char(11)//'c3%r, c3%l = '
+    print*, 
+  print*, 'disp3'//char(11)//'c3%r, c3%l = '
     print*, z%r, z%l
     
     !e assim concluímos essa rotina {6}
