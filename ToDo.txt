@@ -1,5 +1,10 @@
-próximo tópico é f6: o abstract type / procedure(abstract interface), deferred 
+[ ] f6: o abstract type / procedure(abstract interface), deferred 
 falta ajeitar os indices # e links {} da leitura desse material e revisar os comentários
 
-tópico f7 não decidido
+[ ] tópico f7:
+ponteiros/vetorização/allocatable de lista de tipos polimórfica
+ver email do rafael
+
+[ ] descobrir como fazer o roda sh parar ao se deparar com erro em um makefile e não rodar o executavel em seguida
+
 
