@@ -7,7 +7,7 @@
 module m1 !nesse tópico vamos definir POINTER TO PROCEDURES,
 !a interface deles é realzada manualmente
 !para isso precisamos organizart os tipos e as rotinas em um mesmo modulo
-
+implicit none
 !isso é um type novo que empacota um inteiro e um real
 !e que tem um pointer to procedure denominado p1, obedecendo a interface sp1, e inicializado como apontando para null()
 !e que tem um pointer to procedure denominado p2, obedecendo a interface sp2, e inicializado como apontando para sp2
@@ -157,8 +157,8 @@ contains
     call c2_o2%p31
   end select
 
-!              mesmo esse objeto sendo reconhecido como do tipo 3, o BINDING NAME para o sp4 foi dado como sp1
-!              no próximo tópico podemos ver o que é um tipo ABSTRACT com procedimento DEFERRED "disp"
+
+
 
   !rotina concluída, voltamos a quem chamou, no caso foi o program
   end subroutine
@@ -212,7 +212,7 @@ program main
 !necessitamos acesso a rotina s1, onde estão todos os exemplos deste tópico
 !olhemos também a seção de definições de types e declarações de variaveisa e objetos do m1 antes de continuar 
 use m1, only: s1 !{2}
-
+implicit none
 !#7 !vamos à implementação
 !a ordem de execução desse programa será PROGRAM -> s1 -> sp1 -> s1 -> sp4 -> sp1 -> sp4 -> s1 -> program
 !vamos à rotina s1

@@ -1,3 +1,5 @@
+[ ] f4 e f5 preciso ajeitar os comentários e links
+
 [ ] f6: o abstract type / procedure(abstract interface), deferred 
 falta ajeitar os indices # e links {} da leitura desse material e revisar os comentários
 

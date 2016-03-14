@@ -7,7 +7,7 @@
 module m1 !nesse tópico vamos definir TYPE BOUND PROCEDURES,
 !a interface deles é realzada automaticamente
 !mas para isso precisamos organizart os tipos e as rotinas em um mesmo modulo
-
+implicit none
 !isso é um type novo que empacota um inteiro e um real
 !e que tem um type bound procedure cujo binding name é disp2
   type t2
@@ -17,6 +17,7 @@ module m1 !nesse tópico vamos definir TYPE BOUND PROCEDURES,
     !aqui está o TYPE BOUND PROCEDURE, ele fica referido na seção contaisnde um type e precisa ser implementado na seção contains desse module
     !estudemos a estrutura desse antes de continuar
     procedure :: disp2 !{3}
+    procedure :: disp_if_numbers !{link}
     !#4 isso conclui esse type
   end type
   
@@ -28,6 +29,7 @@ module m1 !nesse tópico vamos definir TYPE BOUND PROCEDURES,
     !quer dizer que ao chamar o disp2 de um t3, vai rodar a rotina disp3
     !estudemos a estrutura desse antes de continuar
     procedure :: disp2 => disp3 !{5}
+    !como character não é number, a função disp_if_number não precisa ser OVERRIDEN
     !#6 isso conclui esse type
   end type
 !ele empacota um inteiro e um real, além de um character
@@ -101,6 +103,19 @@ contains
     !rotina concluída, retornemos o estudo ao item {4}
  end subroutine
 
+
+  subroutine disp_if_numbers(z)
+    
+    class(t2) :: z
+
+  print*, 
+  print*, 'disp2'
+  print*, 't2_op1%n is integer, is a number, t2_op1%r is real, is a number'
+  print*, z%n, z%r
+
+ end subroutine
+ 
+ 
   !#5 essa é a rotina TYPEBOUND para o tipo t3, ela espera receber um argumento da classe t3, isso é, do tipo t3 ou qualquer extensão
   !ela não vai aceitar argumento do tipo t2
   subroutine disp3(z)
@@ -108,6 +123,7 @@ contains
     print*, 'disp3'
     !é possível acessar implementações pertencentes aos tipos superiores do tipo em análise
     !aqui nós acessamos a implementação de disp2 do tipo t2, que é a própria rotina disp2
+    !como a t3 é uma extensão do t2, é possivel se referir a um subgrupo de propriedades do t3 que equivale a estrutura do t2, dando acesso inclusive as TYPE BoundPRocedures desse tipo superior t2
     call z%t2%disp2 !executa-se o que foi visto no item 3
     !e depois retornamos para fazer mais alguma coisa, no caso imprimir a propriedade que esse tipo tem em extensão das do tipo superior
     print*, 
@@ -124,7 +140,7 @@ program main
 !necessitamos acesso a rotina s1, onde estão todos os exemplos deste tópico
 !olhemos também a seção de definições de types e declarações de variaveisa e objetos do m1 antes de continuar 
 use m1, only: s1 !{2}
-
+implicit none
 !#7 !vamos à implementação
 !a ordem de execução desse programa será PROGRAM -> s1 -> disp2 -> s1 -> disp3 -> disp2 -> disp3 -> s1 -> program
 !vamos à rotina s1
