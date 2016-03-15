@@ -1,0 +1,39 @@
+2016.03.15.20h.26m
+estou fazendo o f7 sobre array polimorfico
+desvendar MOLD, TYPE:: OBJ, array of polymorphic objects, linked list
+2016.03.14.20h.30m
+peguei umas sugestões do rafael, preciso ajeitar os comentários e links
+2016.03.14.11h.35m
+mexi no roda.sh para rodar todos
+2016.03.14.11h.11m
+tirei os char(11)
+e mexi no script de commit para por data no texto do arquivo changelog
+2016.03.14.11h.10m
+tirei os char(11)
+botei o f6 para rodar
+tutorial sobre type; class; type bound procedure; binding name; allocate, source; abstract; deferred
+agora com pointer to procedures e reorganização de parte do material antigo
+botei o pointer to procedure para usar outro
+editei uns comment no sh commit
+ajeitei nas pastas
+consertei os makefiles
+adicionei textinho sobre o %
+tutorial sobre type; class; type bound procedure; binding name; allocate, source; abstract; deferred
+agora com pointer to procedures e reorganização de parte do material antigo
+botei o pointer to procedure para usar outro
+editei uns comment no sh commit
+ajeitei nas pastas
+tutorial sobre type; class; type bound procedure; binding name; allocate, source; abstract; deferred
+agora com pointer to procedures e reorganização de parte do material antigo
+botei o pointer to procedure para usar outro
+editei uns comment no sh commit
+tutorial sobre type; class; type bound procedure; binding name; allocate, source; abstract; deferred
+agora com pointer to procedures e reorganização de parte do material antigo
+botei o pointer to procedure para usar outro
+tutorial sobre type; class; type bound procedure; binding name; allocate, source; abstract; deferred
+agora com pointer to procedures e reorganização de parte do material antigo
+tutorial sobre type; class; type bound procedure; binding name; allocate, source; abstract; deferred
+agora com pointer to procedures e reorganização de parte do material antigo
+tutorial sobre type; class; type bound procedure; binding name; allocate, source; abstract; deferred
+agora com pointer to procedures e reorganização de parte do material antigo
+tutorial sobre type, class, type bound procedure, binding name, allocate/source, abstract, deferred

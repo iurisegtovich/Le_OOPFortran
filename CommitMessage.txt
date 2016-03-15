@@ -1,1 +1,2 @@
-peguei umas sugestões do rafael, preciso ajeitar os comentários e links
+estou fazendo o f7 sobre array polimorfico
+desvendar MOLD, TYPE:: OBJ, array of polymorphic objects, linked list
