@@ -1,3 +1,5 @@
+[fqo] desvendar MOLD, TYPE:: OBJ, array of polymorphic objects, linked list
+
 [ ] f4 e f5 preciso ajeitar os comentários e links
 
 [ ] f6: o abstract type / procedure(abstract interface), deferred 
@@ -6,7 +8,7 @@ falta ajeitar os indices # e links {} da leitura desse material e revisar os com
 [ ] tópico f7:
 ponteiros/vetorização/allocatable de lista de tipos polimórfica
 ver email do rafael
-desvendar MOLD, TYPE:: OBJ, array of polymorphic objects, linked list
+
 
 [ ] descobrir como fazer o roda sh parar ao se deparar com erro em um makefile e não rodar o executavel em seguida
 
